@@ -18,10 +18,6 @@ public class WhiteboardMarker : MonoBehaviour
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
 
-    public float frequency;
-    public float amplitude;
-    public Transform controllerMask;
-
     void Start()
     {
         _renderer = _tip.GetComponent<Renderer>();
@@ -54,7 +50,7 @@ public class WhiteboardMarker : MonoBehaviour
 
                 if(_touchedLastFrame)
                 {
-                    //OVRInput.SetControllerVibration(frequency, amplitude, controllerMask);
+                    
                     _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
 
                     for(float f = 0.01f; f < 1.00f; f+= 0.01f)
