@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class ChangeScene : MonoBehaviour
+public class ChangeScene : EventTrigger
 {
-    string sceneName;
-
-    // Start is called before the first frame update
-    void Start()
+    public void LoadScene()
     {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadScene("ninja", LoadSceneMode.Additive);
+    }
+
+    public void Debugging()
+    {
+        Debug.Log("Hovering Painting!");
     }
 }

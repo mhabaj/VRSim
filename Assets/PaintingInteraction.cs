@@ -9,8 +9,14 @@ public class PaintingInteraction : XRBaseInteractable
 {
     public SceneAsset scene;
 
-    void OnSelectEntering()
+    protected override void OnSelectEntering(SelectEnterEventArgs args)
     {
-        SceneManager.LoadScene(scene.name, LoadSceneMode.Additive);
+        Debug.Log("Interacting with painting");
+        SceneManager.LoadScene(scene.name);
+    }
+
+    protected override void OnHoverEntering(HoverEnterEventArgs args)
+    {
+        Debug.Log("Hovering painting");
     }
 }
